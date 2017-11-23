@@ -15,8 +15,8 @@ jobs:
     docker:
       - image: alpine/git
     steps:
-      - automerge:
-          branch: [dev]
+      - run:
+          name: merge
           commands:
             - ./merge_to_preprod.sh
 workflows:
