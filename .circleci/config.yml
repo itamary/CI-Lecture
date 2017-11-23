@@ -11,31 +11,10 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-<<<<<<< HEAD
     deployment:
       production:
         branch: dev 
         commands:
-          - git merge dev pre-prod 
-          - git push origin pre-prod
-=======
-  deployment:
-    docker:
-      - image: alpine/git
-    steps:
-      - automerge:
-          branch: [dev]
-          commands:
-            - ./merge_to_preprod.sh
-workflows:
-  version: 2
-  build_and_deploy:
-    jobs:
-      - build
-      - deployment:
-          requires:
-            - build
-          filters:
-            branches:
-              only: dev
->>>>>>> pre-prod
+          - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
+          - "chmod a+x /tmp/travis-automerge"
+          - "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_SECRET_TOKEN=e8c6aad8088d3f85d81cb5e8b81e928603b7ac88 GITHUB_REPO=cdown/srt /tmp/travis-automerge"
