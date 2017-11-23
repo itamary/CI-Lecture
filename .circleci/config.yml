@@ -10,5 +10,5 @@ jobs:
           command: echo Hello, world.
       - run:
           name: PHPLint check
-          command: phplint *.php
+          command: php *.php
 
