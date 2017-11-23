@@ -12,7 +12,7 @@ jobs:
           name: PHPLint check
           command: php *.php
     deployment:
-      production:
+      dev-to-master:
         branch: dev 
         commands:
           - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
