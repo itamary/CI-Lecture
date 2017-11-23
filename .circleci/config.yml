@@ -12,6 +12,8 @@ jobs:
           name: PHPLint check
           command: php *.php
   deployment:
+    docker:
+      - image: alpine/git
     steps:
       - automerge:
           branch: [dev]
