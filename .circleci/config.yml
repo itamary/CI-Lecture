@@ -11,6 +11,9 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-    post:
-      - git merge dev pre-prod
-      - git push origin pre-prod
+    deployment:
+      production:
+        branch: production
+        commands:
+          - git merge dev pre-prod 
+          - git push origin pre-prod
