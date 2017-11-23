@@ -1,2 +1,2 @@
 language: php
-   script: php index.php
+  script: php index.php
