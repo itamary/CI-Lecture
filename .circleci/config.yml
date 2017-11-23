@@ -13,7 +13,7 @@ jobs:
           command: php *.php
     deployment:
       production:
-        branch: production
+        branch: dev 
         commands:
           - git merge dev pre-prod 
           - git push origin pre-prod
