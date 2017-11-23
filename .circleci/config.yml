@@ -12,10 +12,11 @@ jobs:
           name: PHPLint check
           command: php *.php
   deployment:
-    automerge:
-      branch: [dev]
-      commands:
-        - ./merge_to_preprod.sh
+    steps:
+      automerge:
+        branch: [dev]
+        commands:
+          - ./merge_to_preprod.sh
 workflows:
   version: 2
   build_and_deploy:
