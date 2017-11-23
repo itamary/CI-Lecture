@@ -11,4 +11,8 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-
+  deployment:
+    automerge:
+      branch: [dev]
+      commands:
+        - ./merge_to_preprod.sh
