@@ -30,9 +30,6 @@ jobs:
       - run: 
           name: docker push
           command: docker push itamar/hello-dev
-      - run:
-          name: git push to test branch
-          command: git push origin test
 workflows:
   version: 2
   build-deploy:
