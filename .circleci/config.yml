@@ -13,7 +13,7 @@ jobs:
 #          command: php *.php
   deployment:
     machine:
-      php
+      php:
     steps:
       - checkout
       - run:
