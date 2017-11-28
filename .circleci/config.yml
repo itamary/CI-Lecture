@@ -1,8 +1,6 @@
 version: 2
 jobs:
   build:
-    branches:
-      only: dev
     docker:
       - image: php 
     steps:
@@ -14,8 +12,6 @@ jobs:
           name: PHPLint check
           command: php *.php
   deployment:
-    branches:
-      only: dev
     machine:
       php:
         version: 5.4.5
