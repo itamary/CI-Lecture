@@ -13,8 +13,7 @@ jobs:
 #          command: php *.php
   deployment:
     machine:
-      php:
-        version: 5.4.5
+      php
     steps:
       - checkout
       - run:
