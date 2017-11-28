@@ -12,8 +12,9 @@ jobs:
           name: PHPLint check
           command: php *.php
   deployment:
-    docker:
-      - image: testim/docker-cli 
+    machine:
+      php:
+        version: 5.4.5
     steps:
       - run: 
           name: docker build
