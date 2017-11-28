@@ -21,6 +21,9 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
+          name: find php
+          command: find / -name php
+      - run:
           name: PHPLint check
           command: php *.php
       - run: 
