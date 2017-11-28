@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: php 
     steps:
@@ -11,9 +11,28 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-    deployment:
-      hub:
-        branch: dev 
-        commands:
-          - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
-          - docker push itamar/hello-dev
+  build:
+    machine:
+      php:
+        version:  7.0.4
+    steps:
+      - checkout
+      - run: 
+          name: docker build
+          command: docker build  -t itamar/hello-dev:latest .
+      - run: 
+          name: docker login
+          command: docker login -u itamar -p Aa123123
+      - run: 
+          name: docker push1
+          command: docker push itamar/hello-dev
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - test
+      - build
+#         filters:
+#           branches:
+#             only:
+#              - dev
