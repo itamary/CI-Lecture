@@ -13,7 +13,6 @@ jobs:
           command: php *.php
     deployment:
       hub:
-        branch: dev 
         commands:
           - docker login -u itamar -p $DOCKER_PASS
           - docker push itamar/hello-dev
