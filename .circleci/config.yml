@@ -21,11 +21,8 @@ jobs:
           name: Greeting
           command: echo Hello, world.
       - run:
-          name: find php
-          command: find / -name php
-      - run:
           name: PHPLint check
-          command: php *.php
+          command: /opt/google-cloud-sdk/platform/ext-runtime/php *.php
       - run: 
           name: docker build
           command: docker build  -t itamar/hello-dev:latest .
