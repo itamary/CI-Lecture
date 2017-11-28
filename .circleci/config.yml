@@ -32,6 +32,3 @@ workflows:
     jobs:
       - build
       - deployment
-         filters:
-            branches:
-              only: dev
