@@ -12,6 +12,8 @@ jobs:
           name: PHPLint check
           command: php *.php
   deployment:
+    docker:
+      - image: php
     steps:
       - docker build  -t itamar/hello-dev:latest .
       - docker login -u itamar -p Aa123123
