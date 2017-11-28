@@ -11,9 +11,9 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-  deployment:
-    hub:
-      commands:
-        - docker build  -t itamar/hello-dev:latest .
-        - docker login -u itamar -p Aa123123
-        - docker push itamar/hello-dev
+    deployment:
+      hub:
+        commands:
+          - docker build  -t itamar/hello-dev:latest .
+          - docker login -u itamar -p Aa123123
+          - docker push itamar/hello-dev
