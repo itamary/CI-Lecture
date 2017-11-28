@@ -8,7 +8,7 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-  build:
+  build-dev:
     machine:
       php:
         version:  7.0.4
@@ -28,7 +28,7 @@ workflows:
   build-deploy:
     jobs:
       - test
-      - build:
+      - build-dev:
          requires:
          - test
          filters:
