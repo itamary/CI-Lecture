@@ -1,3 +1,5 @@
+version: 2
+jobs:
   build:
     docker:
       - image: php 
@@ -15,3 +17,9 @@
           - docker build  -t itamar/hello-dev:latest .
           - docker login -u itamar -p Aa123123
           - docker push itamar/hello-dev
+  workflows:
+    version: 2
+    build-deploy:
+      jobs:
+        - build
+        - deployment
