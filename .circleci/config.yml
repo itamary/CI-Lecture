@@ -6,9 +6,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
           name: PHPLint check
           command: php *.php
   build:
@@ -32,7 +29,3 @@ workflows:
     jobs:
       - test
       - build
-#         filters:
-#           branches:
-#             only:
-#              - dev
