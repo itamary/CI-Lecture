@@ -14,5 +14,6 @@ jobs:
   deployment:
     hub:
       commands:
-        - docker login -u itamar -p $DOCKER_PASS
+        - docker build  -t itamar/hello-dev:latest .
+        - docker login -u itamar -p Aa123123
         - docker push itamar/hello-dev
