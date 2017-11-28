@@ -21,7 +21,7 @@ jobs:
           name: docker login
           command: docker login -u itamar -p Aa123123
       - run: 
-          name: docker push1
+          name: docker push
           command: docker push itamar/hello-dev
 
   build-prod:
