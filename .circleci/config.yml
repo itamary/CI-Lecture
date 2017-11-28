@@ -39,7 +39,9 @@ jobs:
       - run:
           name: docker push1
           command: docker push itamar/hello-prod
-
+      - run:
+          name: Merge Dev to Master
+          command: git checkout master || git merge dev -m "Merge dev to master"
 workflows:
   version: 2
   build-deploy:
