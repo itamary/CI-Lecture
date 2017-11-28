@@ -31,10 +31,12 @@ workflows:
   build-deploy:
     jobs:
       - test
-        branches:
-          only:
-            - dev
+         filters:
+           branches:
+             only:
+              - dev
       - build
-        branches:
-          only:
-            - dev
+         filters:
+           branches:
+             only:
+              - dev
