@@ -31,4 +31,10 @@ workflows:
   build-deploy:
     jobs:
       - test
+        branches:
+          only:
+            - dev
       - build
+        branches:
+          only:
+            - dev
