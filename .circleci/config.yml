@@ -30,18 +30,21 @@ jobs:
         version:  7.0.4
     steps:
       - checkout
-      - run:
-          name: docker build
-          command: docker build  -t itamar/hello-prod:latest .
-      - run:
-          name: docker login
-          command: docker login -u itamar -p Aa123123
-      - run:
-          name: docker push
-          command: docker push itamar/hello-prod
+#      - run:
+#          name: docker build
+#          command: docker build  -t itamar/hello-prod:latest .
+#      - run:
+#          name: docker login
+#          command: docker login -u itamar -p Aa123123
+#      - run:
+#          name: docker push
+#          command: docker push itamar/hello-prod
       - run:
           name: Checkout Master
-          command: git checkout master 
+          command: git checkout master
+      - run:
+          name: Checkout Master
+          command: git pull
       - run:
           name: Merge Dev to Master
           command: git merge dev -m "Merge dev to master"
