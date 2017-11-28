@@ -31,10 +31,6 @@ workflows:
   build-deploy:
     jobs:
       - test
-         filters:
-           branches:
-             only:
-              - dev
       - build
          filters:
            branches:
