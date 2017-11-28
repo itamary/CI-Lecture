@@ -11,13 +11,9 @@ jobs:
       - run:
           name: PHPLint check
           command: php *.php
-      - run:
-          name: git
-          command: "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/itamary/CI-Lecture/dev/automerge ; chmod a+x /tmp/travis-automerge; BRANCHES_TO_MERGE_REGEX='*dev*' BRANCH_TO_MERGE_INTO=master GITHUB_SECRET_TOKEN=e8c6aad8088d3f85d81cb5e8b81e928603b7ac88 GITHUB_REPO=cdown/srt /tmp/travis-automerge"
-#    deployment:
-#      dev-to-master:
-#        branch: dev 
-#        commands:
-#          - "curl -o /tmp/travis-automerge https://raw.githubusercontent.com/cdown/travis-automerge/master/travis-automerge"
-#          - "chmod a+x /tmp/travis-automerge"
-#          - "BRANCHES_TO_MERGE_REGEX='dev' BRANCH_TO_MERGE_INTO=master GITHUB_SECRET_TOKEN=e8c6aad8088d3f85d81cb5e8b81e928603b7ac88 GITHUB_REPO=cdown/srt /tmp/travis-automerge"
+    deployment:
+      hub:
+        branch: dev 
+        commands:
+          - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+          - docker push itamar/hello-dev
