@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    branch: dev
     docker:
       - image: php 
     steps:
@@ -12,6 +13,7 @@ jobs:
           name: PHPLint check
           command: php *.php
   deployment:
+    branch: dev
     machine:
       php:
         version: 5.4.5
@@ -24,11 +26,15 @@ jobs:
           name: docker login
           command: docker login -u itamar -p Aa123123
       - run: 
-          name: docker pusj
+          name: docker push
           command: docker push itamar/hello-dev
+      - run:
+          name: git push to test branch
+          command: git push origin test
 workflows:
   version: 2
   build-deploy:
     jobs:
       - build
       - deployment
+
