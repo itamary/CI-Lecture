@@ -28,7 +28,7 @@ jobs:
           name: docker login
           command: docker login -u itamar -p Aa123123
       - run: 
-          name: docker push
+          name: docker push1
           command: docker push itamar/hello-dev
 workflows:
   version: 2
