@@ -43,8 +43,11 @@ jobs:
           name: Checkout Master
           command: git checkout master
       - run:
-          name: Pull Master
+          name: git config 
           command: git config --global user.email "itamarye@gmail.com"
+      - run:
+          name: git config
+          command: git config --global user.name  "itamary"
       - run:
           name: Pull Master
           command: git pull
