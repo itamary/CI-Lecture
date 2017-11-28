@@ -13,7 +13,7 @@ jobs:
           command: php *.php
   deployment:
     docker:
-      - image: php
+      - image: testim/docker-cli 
     steps:
       - run: 
           name: docker build
